@@ -19,7 +19,7 @@ variable "instance_type" {
 variable "ami_id" {
   description = "ID of the AMI to use for the instance"
   type        = string
-  default     = "ami-0c7217cdde317cfec"  # Amazon Linux 2023 AMI
+  default     = "ami id"  # Amazon Linux 2023 AMI
 }
 
 variable "key_name" {
