@@ -1,10 +1,131 @@
-# 🚀 EC2-WatchDog: AWS CloudWatch Monitoring System
+# 🛡️ Cloud Guardian
 
 [![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com)
-[![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)](https://www.terraform.io)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com)
+[![CloudWatch](https://img.shields.io/badge/CloudWatch-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/cloudwatch/)
+[![SNS](https://img.shields.io/badge/SNS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/sns/)
 
-> 🔍 **Project Overview**: A powerful monitoring system that keeps your EC2 instances under constant watch and alerts you instantly when something needs attention!
+<div align="center">
+  <img src="https://img.shields.io/badge/Status-Active-success" alt="Status"/>
+  <img src="https://img.shields.io/badge/Version-1.0.0-blue" alt="Version"/>
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License"/>
+</div>
+
+## 📋 Project Overview
+
+This project demonstrates the implementation of AWS CloudWatch monitoring with EC2 instance CPU utilization alerts through SNS notifications. The implementation includes:
+
+### 🎯 Key Achievements
+- ✅ Successfully created EC2 instance
+- ✅ Implemented CloudWatch monitoring
+- ✅ Set up SNS notifications
+- ✅ Performed CPU spike testing
+- ✅ Verified alert system
+
+## 🚀 Implementation Journey
+
+### 1️⃣ EC2 Instance Setup
+- 🖥️ Created EC2 instance (t2.micro)
+- 🔒 Configured security groups
+- 🔑 Set up SSH access
+- 📊 Enabled detailed monitoring
+
+### 2️⃣ CloudWatch Integration
+- 📈 Implemented metrics monitoring
+- ⚡ Created CPU utilization alarms
+- 🔔 Set up SNS notifications
+- 📊 Configured 50% threshold
+
+### 3️⃣ Testing and Validation
+- 🔍 Initial monitoring check
+- 🔌 SSH connection established
+- 💻 CPU spike testing performed
+- 📈 CloudWatch metrics verified
+- 📧 SNS notifications confirmed
+
+## 📊 Results and Metrics
+
+### 🎯 Success Metrics
+| Feature | Status | Details |
+|---------|--------|---------|
+| EC2 Instance | ✅ | Successfully created |
+| CloudWatch | ✅ | Metrics collection working |
+| SNS Alerts | ✅ | Notifications delivered |
+| CPU Testing | ✅ | Spike test successful |
+
+### 📈 Monitoring Results
+- 📊 CPU utilization tracked
+- 🔔 Alerts triggered at 50%
+- 📧 Notifications received
+- ⚡ Real-time monitoring confirmed
+
+## 🛠️ Technologies Used
+
+<div align="center">
+  <img src="https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS EC2"/>
+  <img src="https://img.shields.io/badge/CloudWatch-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" alt="CloudWatch"/>
+  <img src="https://img.shields.io/badge/SNS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" alt="SNS"/>
+  <img src="https://img.shields.io/badge/SSH-000000?style=for-the-badge&logo=ssh&logoColor=white" alt="SSH"/>
+</div>
+
+## 📁 Project Structure
+```
+Cloud-Guardian/
+├── EC2/                    # EC2 instance management
+│   ├── main.tf            # Main Terraform configuration
+│   ├── variables.tf       # Variable declarations
+│   ├── terraform.tfvars   # Variable values
+│   ├── provider.tf        # AWS provider configuration
+│   └── README.md          # Project documentation
+└── README.md              # This file
+```
+
+## 🔍 Key Features
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">🖥️</td>
+      <td>EC2 Instance</td>
+      <td>Automated provisioning</td>
+    </tr>
+    <tr>
+      <td align="center">📊</td>
+      <td>CloudWatch</td>
+      <td>Real-time monitoring</td>
+    </tr>
+    <tr>
+      <td align="center">🔔</td>
+      <td>SNS Alerts</td>
+      <td>Instant notifications</td>
+    </tr>
+    <tr>
+      <td align="center">🔒</td>
+      <td>Security</td>
+      <td>SSH access enabled</td>
+    </tr>
+  </table>
+</div>
+
+## 📈 Testing Results
+
+### CPU Spike Testing
+- 🔍 Initial state: Normal CPU utilization
+- ⚡ Test: Generated CPU load
+- 📊 Result: CloudWatch metrics captured
+- 🔔 Alert: SNS notification received
+
+### Monitoring Verification
+- ✅ Metrics collection working
+- ✅ Alerts triggering correctly
+- ✅ Notifications delivering
+- ✅ Real-time monitoring active
+
+---
+
+<div align="center">
+  <h3>🌟 Project Status: Successfully Implemented 🌟</h3>
+  <p>All features tested and verified working as expected</p>
+</div>
 
 ## 📋 Table of Contents
 - [✨ Features](#-features)
@@ -43,8 +164,8 @@
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/amitkumar-Github8/EC2-WatchDog.git
-   cd EC2-WatchDog
+   git clone https://github.com/amitkumar-Github8/Cloud-Guardian.git
+   cd Cloud-Guardian
    ```
 
 2. **Configure AWS**
@@ -63,7 +184,7 @@
 
 ## 📁 Project Structure
 ```
-EC2-WatchDog/
+Cloud-Guardian/
 ├── EC2/                    # EC2 instance management
 │   ├── main.tf            # Main Terraform configuration
 │   ├── variables.tf       # Variable declarations
@@ -193,4 +314,4 @@ Need help? Here's how to get it:
 
 ---
 
-⭐ **Star this repository if you find it useful!** ⭐ 
+⭐ **Star this repository if you find Cloud Guardian useful!** ⭐ 

@@ -5,9 +5,9 @@ variable "aws_region" {
 }
 
 variable "instance_name" {
-  description = "Name tag for the EC2 instance"
+  description = "Name of the Cloud Guardian EC2 instance"
   type        = string
-  default     = "instance_log"
+  default     = "cloud-guardian-instance"
 }
 
 variable "instance_type" {
@@ -32,4 +32,10 @@ variable "ssh_cidr" {
   description = "CIDR block for SSH access"
   type        = string
   default     = "0.0.0.0/0"
+}
+
+variable "project" {
+  description = "Project name for resource tagging"
+  type        = string
+  default     = "Cloud Guardian"
 } 

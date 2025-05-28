@@ -1,5 +1,6 @@
 aws_region    = "us-east-1"
-instance_name = "instance_log"
+instance_name = "cloud-guardian-instance"
+project       = "Cloud Guardian"
 instance_type = "t2.micro"
 ami_id        = "ami id"
 key_name      = "key pair"

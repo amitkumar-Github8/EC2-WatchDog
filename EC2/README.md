@@ -1,9 +1,10 @@
-# 🖥️ EC2 Instance Management
+# 🛡️ Cloud Guardian - EC2 Module
 
 [![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com)
 [![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)](https://www.terraform.io)
 
-> 🔍 **Project Overview**: Terraform configuration for EC2 instance with CloudWatch monitoring and SNS notifications.
+## Overview
+This module is part of the Cloud Guardian project, providing EC2 instance management with CloudWatch monitoring and SNS notifications.
 
 ## 📋 Table of Contents
 - [🚀 Quick Start](#-quick-start)
@@ -51,3 +52,11 @@
 1. Configure AWS CLI with your credentials
 2. Create SSH key pair for instance access
 3. Deploy infrastructure using Terraform 
+
+## Usage
+```hcl
+module "ec2_instance" {
+  source = "github.com/amitkumar-Github8/Cloud-Guardian//EC2"
+  // ... existing code ...
+}
+``` 

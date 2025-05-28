@@ -7,7 +7,8 @@ resource "aws_instance" "instance_log" {
   vpc_security_group_ids = [aws_security_group.ssh_sg.id]
 
   tags = {
-    Name = var.instance_name
+    Name        = "cloud-guardian-instance"
+    Project     = "Cloud Guardian"
   }
 }
 
@@ -35,4 +36,16 @@ resource "aws_security_group" "ssh_sg" {
   tags = {
     Name = "ssh-sg"
   }
+}
+
+resource "aws_cloudwatch_metric_alarm" "cpu_utilization" {
+  alarm_name          = "cloud-guardian-cpu-alarm"
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = "2"
+  metric_name         = "CPUUtilization"
+  namespace           = "AWS/EC2"
+  period             = "300"
+  statistic          = "Average"
+  threshold          = "80"
+  alarm_description  = "Cloud Guardian - CPU utilization alarm"
 }
