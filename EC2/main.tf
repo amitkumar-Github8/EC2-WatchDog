@@ -37,15 +37,3 @@ resource "aws_security_group" "ssh_sg" {
     Name = "ssh-sg"
   }
 }
-
-resource "aws_cloudwatch_metric_alarm" "cpu_utilization" {
-  alarm_name          = "cloud-guardian-cpu-alarm"
-  comparison_operator = "GreaterThanThreshold"
-  evaluation_periods  = "2"
-  metric_name         = "CPUUtilization"
-  namespace           = "AWS/EC2"
-  period             = "300"
-  statistic          = "Average"
-  threshold          = "80"
-  alarm_description  = "Cloud Guardian - CPU utilization alarm"
-}

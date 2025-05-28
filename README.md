@@ -10,6 +10,11 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License"/>
 </div>
 
+<div align="center">
+  <img src="Assets/cloud-guardian-dashboard-overview.png" alt="Cloud Guardian Dashboard" width="800"/>
+  <p><i>Cloud Guardian Dashboard Overview</i></p>
+</div>
+
 ## 📋 Project Overview
 
 This project demonstrates the implementation of AWS CloudWatch monitoring with EC2 instance CPU utilization alerts through SNS notifications. The implementation includes:
@@ -52,6 +57,11 @@ This project demonstrates the implementation of AWS CloudWatch monitoring with E
 | SNS Alerts | ✅ | Notifications delivered |
 | CPU Testing | ✅ | Spike test successful |
 
+<div align="center">
+  <img src="Assets/monitoring/cloud-guardian-metrics.png" alt="CloudWatch Metrics" width="600"/>
+  <p><i>CloudWatch Metrics Dashboard</i></p>
+</div>
+
 ### 📈 Monitoring Results
 - 📊 CPU utilization tracked
 - 🔔 Alerts triggered at 50%
@@ -76,6 +86,8 @@ Cloud-Guardian/
 │   ├── terraform.tfvars   # Variable values
 │   ├── provider.tf        # AWS provider configuration
 │   └── README.md          # Project documentation
+├── default_metrics_demo/  # Testing and demonstration
+│   └── cpu_spike.py       # CPU load testing script
 └── README.md              # This file
 ```
 
@@ -191,6 +203,8 @@ Cloud-Guardian/
 │   ├── terraform.tfvars   # Variable values
 │   ├── provider.tf        # AWS provider configuration
 │   └── README.md          # Project documentation
+├── default_metrics_demo/  # Testing and demonstration
+│   └── cpu_spike.py       # CPU load testing script
 └── README.md              # This file
 ```
 
@@ -242,12 +256,32 @@ terraform apply
 - Network Traffic
 - Instance Status
 
+<div align="center">
+  <table>
+    <tr>
+      <td>
+        <img src="Assets/monitoring/cloud-guardian-cpu-normal.png" alt="Normal CPU Usage" width="400"/>
+        <p><i>Normal CPU Utilization</i></p>
+      </td>
+      <td>
+        <img src="Assets/monitoring/cloud-guardian-cpu-high.png" alt="High CPU Usage" width="400"/>
+        <p><i>High CPU Utilization</i></p>
+      </td>
+    </tr>
+  </table>
+</div>
+
 ### 🚨 Alert Types
 - High CPU Usage
 - Low Disk Space
 - Instance Down
 - Memory Pressure
 - Network Issues
+
+<div align="center">
+  <img src="Assets/alerts/cloud-guardian-alarm-triggered.png" alt="Alarm Triggered" width="600"/>
+  <p><i>CloudWatch Alarm Triggered</i></p>
+</div>
 
 ## 📧 Notification System
 
@@ -256,21 +290,10 @@ terraform apply
 - SNS Topics
 - CloudWatch Alarms
 
-### ⚙️ Alert Configuration
-```hcl
-# Example CloudWatch Alarm
-resource "aws_cloudwatch_metric_alarm" "cpu_utilization" {
-  alarm_name          = "high-cpu-utilization"
-  comparison_operator = "GreaterThanThreshold"
-  evaluation_periods  = "2"
-  metric_name         = "CPUUtilization"
-  namespace           = "AWS/EC2"
-  period             = "300"
-  statistic          = "Average"
-  threshold          = "80"
-  alarm_description  = "This metric monitors EC2 CPU utilization"
-}
-```
+<div align="center">
+  <img src="Assets/alerts/cloud-guardian-sns-subscription.png" alt="SNS Subscription" width="600"/>
+  <p><i>SNS Topic Subscription</i></p>
+</div>
 
 ## 🔒 Security
 
@@ -315,3 +338,59 @@ Need help? Here's how to get it:
 ---
 
 ⭐ **Star this repository if you find Cloud Guardian useful!** ⭐ 
+
+## 🔧 Testing Tools
+
+### CPU Spike Testing Script
+The `cpu_spike.py` script is a utility for testing CloudWatch CPU utilization alarms. It simulates CPU load to verify monitoring and alerting systems.
+
+<div align="center">
+  <img src="Assets/monitoring/cloud-guardian-monitoring-setup.png" alt="Monitoring Setup" width="600"/>
+  <p><i>CloudWatch Monitoring Setup</i></p>
+</div>
+
+#### Features
+- 🔄 Configurable CPU utilization percentage
+- ⏱️ Adjustable test duration
+- 📊 Precise CPU load simulation
+- 🧪 Automated testing support
+
+#### Usage
+```bash
+# Run with default settings (80% CPU for 30 seconds)
+python cpu_spike.py
+
+# Run with custom parameters
+python cpu_spike.py --duration 60 --cpu-percent 90
+```
+
+#### Parameters
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| duration | 30 | Test duration in seconds |
+| cpu_percent | 80 | Target CPU utilization percentage |
+
+#### Example Scenarios
+1. **Basic Testing**
+   ```bash
+   python cpu_spike.py
+   # Simulates 80% CPU load for 30 seconds
+   ```
+
+2. **High Load Testing**
+   ```bash
+   python cpu_spike.py --duration 60 --cpu-percent 90
+   # Simulates 90% CPU load for 60 seconds
+   ```
+
+3. **Quick Test**
+   ```bash
+   python cpu_spike.py --duration 15 --cpu-percent 50
+   # Simulates 50% CPU load for 15 seconds
+   ```
+
+#### Integration with CloudWatch
+- 🔍 Triggers CPU utilization alarms
+- 📊 Generates CloudWatch metrics
+- 🔔 Tests SNS notifications
+- 📈 Validates monitoring setup
