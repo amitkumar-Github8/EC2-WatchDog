@@ -16,26 +16,26 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-variable "ami_id" {
-  description = "ID of the AMI to use for the instance"
-  type        = string
-  default     = "ami id"  # Amazon Linux 2023 AMI
-}
-
 variable "key_name" {
-  description = "Name of the key pair to use for the instance"
+  description = "Name of the EC2 Key Pair for SSH access"
   type        = string
-  default     = "terraform_demo"
+  # You need to create this key pair in AWS Console first
 }
 
 variable "ssh_cidr" {
-  description = "CIDR block for SSH access"
+  description = "CIDR block for SSH access (use your public IP/32 for security)"
   type        = string
-  default     = "0.0.0.0/0"
+  default     = "0.0.0.0/0"  # WARNING: This allows access from anywhere. Replace with your IP/32
+}
+
+variable "notification_email" {
+  description = "Email address to receive CloudWatch alarm notifications"
+  type        = string
+  # Example: "your-email@gmail.com"
 }
 
 variable "project" {
   description = "Project name for resource tagging"
   type        = string
   default     = "Cloud Guardian"
-} 
+}

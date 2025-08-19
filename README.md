@@ -1,396 +1,232 @@
-# 🛡️ Cloud Guardian
+# 🛡️ Cloud Guardian - AWS Monitoring Made Simple
 
-[![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com)
-[![CloudWatch](https://img.shields.io/badge/CloudWatch-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/cloudwatch/)
-[![SNS](https://img.shields.io/badge/SNS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/sns/)
+**A beginner-friendly project that sets up AWS CloudWatch monitoring for EC2 instances with automatic email alerts.**
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Status-Active-success" alt="Status"/>
-  <img src="https://img.shields.io/badge/Version-1.0.0-blue" alt="Version"/>
-  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License"/>
-</div>
-
-<div align="center">
-  <img src="Assets/cloud-guardian-dashboard-overview.png" alt="Cloud Guardian Dashboard" width="800"/>
-  <p><i>Cloud Guardian Dashboard Overview</i></p>
-</div>
-
-## 📋 Project Overview
-
-This project demonstrates the implementation of AWS CloudWatch monitoring with EC2 instance CPU utilization alerts through SNS notifications. The implementation includes:
-
-### 🎯 Key Achievements
-- ✅ Successfully created EC2 instance
-- ✅ Implemented CloudWatch monitoring
-- ✅ Set up SNS notifications
-- ✅ Performed CPU spike testing
-- ✅ Verified alert system
-
-## 🚀 Implementation Journey
-
-### 1️⃣ EC2 Instance Setup
-- 🖥️ Created EC2 instance (t2.micro)
-- 🔒 Configured security groups
-- 🔑 Set up SSH access
-- 📊 Enabled detailed monitoring
-
-### 2️⃣ CloudWatch Integration
-- 📈 Implemented metrics monitoring
-- ⚡ Created CPU utilization alarms
-- 🔔 Set up SNS notifications
-- 📊 Configured 50% threshold
-
-### 3️⃣ Testing and Validation
-- 🔍 Initial monitoring check
-- 🔌 SSH connection established
-- 💻 CPU spike testing performed
-- 📈 CloudWatch metrics verified
-- 📧 SNS notifications confirmed
-
-## 📊 Results and Metrics
-
-### 🎯 Success Metrics
-| Feature | Status | Details |
-|---------|--------|---------|
-| EC2 Instance | ✅ | Successfully created |
-| CloudWatch | ✅ | Metrics collection working |
-| SNS Alerts | ✅ | Notifications delivered |
-| CPU Testing | ✅ | Spike test successful |
-
-<div align="center">
-  <img src="Assets/monitoring/cloud-guardian-metrics.png" alt="CloudWatch Metrics" width="600"/>
-  <p><i>CloudWatch Metrics Dashboard</i></p>
-</div>
-
-### 📈 Monitoring Results
-- 📊 CPU utilization tracked
-- 🔔 Alerts triggered at 50%
-- 📧 Notifications received
-- ⚡ Real-time monitoring confirmed
-
-## 🛠️ Technologies Used
-
-<div align="center">
-  <img src="https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS EC2"/>
-  <img src="https://img.shields.io/badge/CloudWatch-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" alt="CloudWatch"/>
-  <img src="https://img.shields.io/badge/SNS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" alt="SNS"/>
-  <img src="https://img.shields.io/badge/SSH-000000?style=for-the-badge&logo=ssh&logoColor=white" alt="SSH"/>
-</div>
-
-## 📁 Project Structure
-```
-Cloud-Guardian/
-├── EC2/                    # EC2 instance management
-│   ├── main.tf            # Main Terraform configuration
-│   ├── variables.tf       # Variable declarations
-│   ├── terraform.tfvars   # Variable values
-│   ├── provider.tf        # AWS provider configuration
-│   └── README.md          # Project documentation
-├── default_metrics_demo/  # Testing and demonstration
-│   └── cpu_spike.py       # CPU load testing script
-└── README.md              # This file
-```
-
-## 🔍 Key Features
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">🖥️</td>
-      <td>EC2 Instance</td>
-      <td>Automated provisioning</td>
-    </tr>
-    <tr>
-      <td align="center">📊</td>
-      <td>CloudWatch</td>
-      <td>Real-time monitoring</td>
-    </tr>
-    <tr>
-      <td align="center">🔔</td>
-      <td>SNS Alerts</td>
-      <td>Instant notifications</td>
-    </tr>
-    <tr>
-      <td align="center">🔒</td>
-      <td>Security</td>
-      <td>SSH access enabled</td>
-    </tr>
-  </table>
-</div>
-
-## 📈 Testing Results
-
-### CPU Spike Testing
-- 🔍 Initial state: Normal CPU utilization
-- ⚡ Test: Generated CPU load
-- 📊 Result: CloudWatch metrics captured
-- 🔔 Alert: SNS notification received
-
-### Monitoring Verification
-- ✅ Metrics collection working
-- ✅ Alerts triggering correctly
-- ✅ Notifications delivering
-- ✅ Real-time monitoring active
+![AWS](https://img.shields.io/badge/AWS-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-623CE4?style=flat-square&logo=terraform&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Working-brightgreen?style=flat-square)
 
 ---
 
-<div align="center">
-  <h3>🌟 Project Status: Successfully Implemented 🌟</h3>
-  <p>All features tested and verified working as expected</p>
-</div>
+## 🎯 What This Project Does
 
-## 📋 Table of Contents
-- [✨ Features](#-features)
-- [🚀 Quick Start](#-quick-start)
-- [📁 Project Structure](#-project-structure)
-- [⚙️ Prerequisites](#️-prerequisites)
-- [🔧 Setup Guide](#-setup-guide)
-- [🔍 Monitoring Features](#-monitoring-features)
-- [📧 Notification System](#-notification-system)
-- [🔒 Security](#-security)
-- [❓ FAQ](#-faq)
-- [🤝 Contributing](#-contributing)
-- [📞 Support](#-support)
+| Component | Description |
+|-----------|-------------|
+| 🖥️ **EC2 Instance** | Creates a small Amazon Linux server (free tier eligible) |
+| 📊 **CloudWatch Monitoring** | Watches CPU usage in real-time |
+| 🚨 **Smart Alerts** | Sends email when CPU > 50% for 4 minutes |
+| 🧪 **Test Script** | Python script to trigger alerts for testing |
 
-## ✨ Features
+---
 
-### 🖥️ EC2 Monitoring
-- 📊 Real-time instance metrics
-- 🔄 Automated health checks
-- 📈 Performance tracking
-- 🚨 Instant alerts
+## 🚀 Quick Start (5 Minutes)
 
-### 📧 Smart Notifications
-- 📱 Email alerts
-- ⚡ Real-time updates
-- 📊 Customizable thresholds
-- 📝 Detailed reports
+### Prerequisites ✅
+- AWS Account (free tier works)
+- [Terraform](https://www.terraform.io/downloads) installed
+- [AWS CLI](https://aws.amazon.com/cli/) installed
 
-### 🔍 Log Management
-- 📚 Automated log collection
-- 🔄 Log rotation
-- 📊 Log analysis
-- 🔒 Secure storage
-
-## 🚀 Quick Start
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/amitkumar-Github8/Cloud-Guardian.git
-   cd Cloud-Guardian
-   ```
-
-2. **Configure AWS**
-   ```bash
-   aws configure
-   # Enter your AWS credentials when prompted
-   ```
-
-3. **Deploy Infrastructure**
-   ```bash
-   cd EC2
-   terraform init
-   terraform plan
-   terraform apply
-   ```
-
-## 📁 Project Structure
-```
-Cloud-Guardian/
-├── EC2/                    # EC2 instance management
-│   ├── main.tf            # Main Terraform configuration
-│   ├── variables.tf       # Variable declarations
-│   ├── terraform.tfvars   # Variable values
-│   ├── provider.tf        # AWS provider configuration
-│   └── README.md          # Project documentation
-├── default_metrics_demo/  # Testing and demonstration
-│   └── cpu_spike.py       # CPU load testing script
-└── README.md              # This file
-```
-
-## ⚙️ Prerequisites
-
-### 🛠️ Required Tools
-- [Terraform](https://www.terraform.io/downloads.html) (v1.0.0+)
-- [AWS CLI](https://aws.amazon.com/cli/)
-- Git
-
-### 🔑 AWS Requirements
-- Active AWS account
-- IAM permissions
-- Access keys
-- Verified email for SNS
-
-## 🔧 Setup Guide
-
-### 1. AWS Configuration
+### Step 1: Configure AWS
 ```bash
-# Configure AWS CLI
 aws configure
-AWS Access Key ID: [Your Access Key]
-AWS Secret Access Key: [Your Secret Key]
-Default region name: [Your Region]
-Default output format: json
+# Enter your AWS Access Key ID
+# Enter your AWS Secret Access Key  
+# Enter your region (e.g., us-east-1)
+# Enter output format: json
 ```
 
-### 2. SNS Setup
-1. Go to AWS SNS Console
-2. Create a new topic
-3. Subscribe your email
-4. Confirm subscription
+### Step 2: Create SSH Key
+1. Go to [AWS EC2 Console](https://console.aws.amazon.com/ec2/)
+2. Click "Key Pairs" → "Create key pair"
+3. Name: `cloud-guardian-key`
+4. Download the `.pem` file
 
-### 3. Deploy Infrastructure
+### Step 3: Configure Project
+Edit `EC2/terraform.tfvars`:
+```hcl
+key_name          = "cloud-guardian-key"           # Your key pair name
+notification_email = "your-email@example.com"      # Your email for alerts
+ssh_cidr          = "YOUR_PUBLIC_IP/32"           # Your IP from whatismyip.com
+```
+
+### Step 4: Deploy
 ```bash
 cd EC2
 terraform init
-terraform plan
 terraform apply
+# Type 'yes' when prompted
 ```
 
-## 🔍 Monitoring Features
+### Step 5: Test
+```bash
+# SSH to your instance (use IP from terraform output)
+ssh -i cloud-guardian-key.pem ec2-user@YOUR_INSTANCE_IP
 
-### 📊 Metrics Tracked
-- CPU Utilization
-- Memory Usage
-- Disk Space
-- Network Traffic
-- Instance Status
+# Run CPU test
+cd /home/ec2-user
+git clone https://github.com/amitkumar-Github8/Cloud-Guardian.git
+cd Cloud-Guardian/default_metrics_demo
+python3 cpu_spike.py
+```
 
-<div align="center">
-  <table>
-    <tr>
-      <td>
-        <img src="Assets/monitoring/cloud-guardian-cpu-normal.png" alt="Normal CPU Usage" width="400"/>
-        <p><i>Normal CPU Utilization</i></p>
-      </td>
-      <td>
-        <img src="Assets/monitoring/cloud-guardian-cpu-high.png" alt="High CPU Usage" width="400"/>
-        <p><i>High CPU Utilization</i></p>
-      </td>
-    </tr>
-  </table>
-</div>
-
-### 🚨 Alert Types
-- High CPU Usage
-- Low Disk Space
-- Instance Down
-- Memory Pressure
-- Network Issues
-
-<div align="center">
-  <img src="Assets/alerts/cloud-guardian-alarm-triggered.png" alt="Alarm Triggered" width="600"/>
-  <p><i>CloudWatch Alarm Triggered</i></p>
-</div>
-
-## 📧 Notification System
-
-### 📱 Notification Channels
-- Email Alerts
-- SNS Topics
-- CloudWatch Alarms
-
-<div align="center">
-  <img src="Assets/alerts/cloud-guardian-sns-subscription.png" alt="SNS Subscription" width="600"/>
-  <p><i>SNS Topic Subscription</i></p>
-</div>
-
-## 🔒 Security
-
-### 🔐 Best Practices
-- 🔑 Secure credential management
-- 👥 IAM role-based access
-- 🔄 Regular key rotation
-- 🏷️ Resource tagging
-
-### 🛡️ Security Tools
-- AWS CloudWatch
-- AWS Config
-- AWS Security Hub
-
-## ❓ FAQ
-
-### Q: How do I add more monitoring metrics?
-A: Edit the CloudWatch configuration in `main.tf` to add custom metrics.
-
-### Q: Can I customize alert thresholds?
-A: Yes! Modify the threshold values in the CloudWatch alarms.
-
-### Q: How do I add more notification channels?
-A: Create additional SNS topics and subscribe them to your CloudWatch alarms.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## 📞 Support
-
-Need help? Here's how to get it:
-
-1. 📚 Check the [AWS Documentation](https://docs.aws.amazon.com/)
-2. 💬 Open an issue in this repository
-3. 📧 Contact the maintainers
+**You should receive an email alert within 5-10 minutes!** ✅
 
 ---
 
-⭐ **Star this repository if you find Cloud Guardian useful!** ⭐ 
+## 📊 What Gets Created
 
-## 🔧 Testing Tools
+| Resource | Purpose | Cost |
+|----------|---------|------|
+| EC2 t2.micro | Server to monitor | Free tier |
+| CloudWatch Alarm | CPU monitoring | Free |
+| SNS Topic | Email notifications | Free (1000 emails/month) |
+| Security Group | SSH access control | Free |
 
-### CPU Spike Testing Script
-The `cpu_spike.py` script is a utility for testing CloudWatch CPU utilization alarms. It simulates CPU load to verify monitoring and alerting systems.
+---
 
-<div align="center">
-  <img src="Assets/monitoring/cloud-guardian-monitoring-setup.png" alt="Monitoring Setup" width="600"/>
-  <p><i>CloudWatch Monitoring Setup</i></p>
-</div>
+## 🧪 Testing Your Setup
 
-#### Features
-- 🔄 Configurable CPU utilization percentage
-- ⏱️ Adjustable test duration
-- 📊 Precise CPU load simulation
-- 🧪 Automated testing support
-
-#### Usage
+### Option 1: Simple CPU Test (Recommended)
 ```bash
-# Run with default settings (80% CPU for 30 seconds)
-python cpu_spike.py
-
-# Run with custom parameters
-python cpu_spike.py --duration 60 --cpu-percent 90
+# On your EC2 instance
+python3 -c "
+import time, threading, multiprocessing
+def cpu_load(): [sum(i*i for i in range(50000)) for _ in range(1000)]
+print('Starting 5-minute CPU test...')
+[threading.Thread(target=cpu_load).start() for _ in range(multiprocessing.cpu_count())]
+time.sleep(300)
+print('Test complete!')
+"
 ```
 
-#### Parameters
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| duration | 30 | Test duration in seconds |
-| cpu_percent | 80 | Target CPU utilization percentage |
+### Option 2: Using Project Script
+```bash
+cd Cloud-Guardian/default_metrics_demo
+python3 cpu_spike.py
+```
 
-#### Example Scenarios
-1. **Basic Testing**
-   ```bash
-   python cpu_spike.py
-   # Simulates 80% CPU load for 30 seconds
-   ```
+### ✅ Success Indicators
+- 📧 Email alert received
+- 🔴 CloudWatch alarm shows "In alarm" state
+- 📈 CPU metrics visible in AWS console
 
-2. **High Load Testing**
-   ```bash
-   python cpu_spike.py --duration 60 --cpu-percent 90
-   # Simulates 90% CPU load for 60 seconds
-   ```
+---
 
-3. **Quick Test**
-   ```bash
-   python cpu_spike.py --duration 15 --cpu-percent 50
-   # Simulates 50% CPU load for 15 seconds
-   ```
+## 🔍 Monitoring Your Instance
 
-#### Integration with CloudWatch
-- 🔍 Triggers CPU utilization alarms
-- 📊 Generates CloudWatch metrics
-- 🔔 Tests SNS notifications
-- 📈 Validates monitoring setup
+### AWS Console Locations
+- **Instance**: EC2 → Instances → `cloud-guardian-instance`
+- **Monitoring**: CloudWatch → Alarms → `cloud-guardian-cpu-high`
+- **Metrics**: CloudWatch → Metrics → EC2 → Per-Instance Metrics
+- **Notifications**: SNS → Topics → `cloud-guardian-cpu-alerts`
+
+---
+
+## 🆘 Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| **SSH Connection Failed** | • Check security group allows your IP<br>• Verify key pair exists<br>• Use correct username: `ec2-user` |
+| **No Email Alerts** | • Check spam folder<br>• Confirm SNS subscription in email<br>• Verify alarm threshold reached |
+| **Terraform Apply Failed** | • Check AWS credentials: `aws sts get-caller-identity`<br>• Verify region availability<br>• Check IAM permissions |
+| **Can't Find Instance** | • Check correct AWS region<br>• Look for tag: `Name: cloud-guardian-instance` |
+
+---
+
+## 🧹 Clean Up (Important!)
+
+**Destroy resources to avoid charges:**
+```bash
+cd EC2
+terraform destroy
+# Type 'yes' when prompted
+```
+
+---
+
+## 📁 Project Structure
+
+```
+Cloud-Guardian/
+├── 📄 README.md                    # This guide
+├── 📄 SIMPLE_DEPLOY.md            # Detailed deployment steps
+├── 📁 EC2/                        # Infrastructure code
+│   ├── 🔧 main.tf                 # Core AWS resources
+│   ├── 📝 variables.tf            # Configuration options
+│   ├── 📤 outputs.tf              # Deployment results
+│   ├── ⚙️ provider.tf             # AWS provider setup
+│   ├── 📊 data.tf                 # AMI lookup
+│   ├── ⚡ terraform.tfvars        # Your settings (edit this!)
+│   └── 📋 README.md               # EC2 module docs
+└── 📁 default_metrics_demo/       # Testing tools
+    └── 🐍 cpu_spike.py            # CPU load simulator
+```
+
+---
+
+## 🎓 Learning Outcomes
+
+After completing this project, you'll understand:
+
+| Concept | What You'll Learn |
+|---------|-------------------|
+| **Infrastructure as Code** | How Terraform creates AWS resources |
+| **Cloud Monitoring** | How CloudWatch collects and analyzes metrics |
+| **Alerting Systems** | How to set up automated notifications |
+| **AWS Security** | How security groups control access |
+| **Remote Access** | How to securely connect to cloud servers |
+
+---
+
+## 💰 Cost Information
+
+- ✅ Uses AWS Free Tier eligible resources
+- ✅ CloudWatch basic monitoring is free
+- ✅ SNS: First 1000 emails per month are free
+- ✅ **Total cost**: $0 if you're in free tier
+
+---
+
+## 🔐 Security Best Practices
+
+- ✅ Use specific IP ranges, not `0.0.0.0/0`
+- ✅ Keep SSH keys secure and private
+- ✅ Regularly rotate AWS credentials
+- ✅ Monitor billing for unexpected charges
+- ✅ Destroy resources when not needed
+
+---
+
+## 💡 Next Steps
+
+Ready to expand? Try these:
+- Add disk space monitoring
+- Set up multiple alarm thresholds
+- Create a custom dashboard
+- Monitor multiple instances
+- Add Slack notifications
+- Implement auto-scaling
+
+---
+
+## 🤝 Support
+
+Need help?
+- 📖 Check [AWS Documentation](https://docs.aws.amazon.com/cloudwatch/)
+- 🐛 Open an [Issue](https://github.com/amitkumar-Github8/Cloud-Guardian/issues)
+- 💬 Ask questions in the repo discussions
+
+---
+
+<div align="center">
+
+## 🎉 Success!
+
+If you can receive an email alert when running the CPU test, congratulations! You've successfully set up AWS monitoring with CloudWatch and SNS.
+
+**⭐ If this project helped you learn AWS monitoring, please star the repository! ⭐**
+
+Made with ❤️ for the AWS learning community
+
+</div>
